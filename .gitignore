@@ -1,0 +1,11 @@
+# Lokale Konfiguration mit Zugangsdaten & Rundennamen – niemals committen!
+config.toml
+credentials.env
+
+# Laufzeit-/Debug-Artefakte
+cookies.txt
+*.html
+__pycache__/
+*.pyc
+.venv/
+venv/

@@ -1,0 +1,35 @@
+# ---------------------------------------------------------------------------
+# Konfiguration für kicktipp-transfer
+#
+# 1. Diese Datei nach `config.toml` kopieren:   cp config.example.toml config.toml
+# 2. Accounts, Quelle und Ziele eintragen (siehe unten).
+#
+# `config.toml` enthält deine Passwörter und Rundennamen und ist per .gitignore
+# vom Repo ausgeschlossen – niemals committen.
+# ---------------------------------------------------------------------------
+
+# Accounts: pro Kicktipp-Login ein frei wählbares Kürzel ([accounts.<KÜRZEL>]).
+# Liegen alle Runden unter demselben Login, genügt ein einziger Account.
+[accounts.A]
+email = "account-a@example.com"
+password = "passwortA"
+
+[accounts.B]
+email = "account-b@example.com"
+password = "passwortB"
+
+# Quelle: Runde, in der bereits getippt wurde.
+# `group` ist der Pfadteil der URL:  https://www.kicktipp.de/<group>/
+[source]
+account = "A"
+group = "meine-quell-runde"
+
+# Ziele: beliebig viele Runden, in die kopiert wird.
+# Für jede Runde ein eigener [[targets]]-Block.
+[[targets]]
+account = "A"
+group = "ziel-runde-1"
+
+[[targets]]
+account = "B"
+group = "ziel-runde-2"
